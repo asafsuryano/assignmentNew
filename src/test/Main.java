@@ -8,7 +8,7 @@ public class Main {
         String userJack = "Jack";
         String userRob = "Rob";
         String userJoe = "Joe";
-        LibraryService libraryService =new LibraryService();
+        LibraryService libraryService =new LibraryServiceImplementation();
         addAllRequiredBooks(libraryService);
         Book book= libraryService.searchBookByTitle("Oliver twist");
         libraryService.loanBook(userDan, book.getTitle());

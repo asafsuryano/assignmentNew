@@ -1,10 +1,10 @@
 package test;
 
 
-public class LibraryService {
+public class LibraryServiceImplementation implements LibraryService {
     private final Library library;
     private final int numCopies = 2;
-    public LibraryService(){
+    public LibraryServiceImplementation(){
         this.library =new Library(numCopies);
     }
     public boolean addBook (String title,String author){
@@ -14,7 +14,7 @@ public class LibraryService {
     public void removeBook (String title){
         Book book= library.getBookByTitle(title);
         if (book!=null) {
-            library.removeBook(book);
+            library.removeBook(title);
             System.out.println(title + " has been removed");
         } else {
             System.out.println(title + " is not in the library");
@@ -28,6 +28,7 @@ public class LibraryService {
         if (library.getNumOfLoansForBook(title) > numCopies) {
             System.out.println("the book "+ title + " is not available. You have been added to the waiting list. You are “" + (library.getNumOfLoansForBook(title) - numCopies) + "” in the line");
         }
+
     }
     public void returnBook (String title,String userName) {
         library.removeBookLoan(title,userName);
