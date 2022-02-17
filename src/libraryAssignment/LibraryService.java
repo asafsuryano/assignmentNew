@@ -1,4 +1,4 @@
-package test;
+package libraryAssignment;
 
 public interface LibraryService {
     boolean addBook (String title,String author);

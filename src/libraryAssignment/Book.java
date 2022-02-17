@@ -1,4 +1,4 @@
-package test;
+package libraryAssignment;
 
 public class Book {
     private String title;
@@ -26,11 +26,10 @@ public class Book {
 
     @Override
     public boolean equals(Object o){
-        Book book=(Book) o;
-        if (book.getTitle().equals(this.getTitle()) && (book.getAuthor().equals(this.author))){
-            return true;
-        }else{
-            return false;
+        if (o instanceof Book) {
+            Book book = (Book) o;
+            return book.getTitle().equals(this.getTitle()) && (book.getAuthor().equals(this.author));
         }
+        return false;
     }
 }
