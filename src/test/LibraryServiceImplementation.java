@@ -7,7 +7,7 @@ public class LibraryServiceImplementation implements LibraryService {
     public LibraryServiceImplementation(){
         this.library =new Library(numCopies);
     }
-    public boolean addBook (String title,String author){
+    public boolean addBook (String title,String author) {
         library.addBook(new Book(title,author));
         return library.getBookByTitle(title) != null;
     }
@@ -23,7 +23,7 @@ public class LibraryServiceImplementation implements LibraryService {
     public Book searchBookByTitle (String title) {
         return library.getBookByTitle(title);
     }
-    public void loanBook (String userName,String title){
+    public void loanBook (String userName,String title) {
         library.addLoanToBook(title,userName);
         if (library.getNumOfLoansForBook(title) > numCopies) {
             System.out.println("the book "+ title + " is not available. You have been added to the waiting list. You are “" + (library.getNumOfLoansForBook(title) - numCopies) + "” in the line");
