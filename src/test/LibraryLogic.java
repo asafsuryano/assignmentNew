@@ -29,10 +29,11 @@ public class LibraryLogic {
             System.out.println("the book "+ title + " is not available. You have been added to the waiting list. You are “" + (libraryDB.getNumOfLoansForBook(title) - numCopies) + "” in the line");
         }
     }
-    public void returnBook (String title) {
-        libraryDB.removeBookLoan(title);
+    public void returnBook (String title,String userName) {
+        libraryDB.removeBookLoan(title,userName);
         if (libraryDB.getNumOfLoansForBook(title) >= numCopies) {
             String nextUser=libraryDB.getNextUserToLoanTheBook(title);
+            libraryDB.addLoanToBook(title,nextUser);
             System.out.println(nextUser + " was the next in the line for the book “" + title + "”. Copy 1 loaned by " + nextUser);
         }
     }

@@ -15,7 +15,7 @@ public class Main {
         libraryLogic.loanBook(userJack, book.getTitle());
         libraryLogic.loanBook(userRob, book.getTitle());
         libraryLogic.loanBook(userJoe, book.getTitle());
-        libraryLogic.returnBook(book.getTitle());
+        libraryLogic.returnBook(book.getTitle(),userJack);
     }
     public static void addAllRequiredBooks(LibraryLogic libraryLogic){
         libraryLogic.addBook("Moby Dick", "AuthorA");
