@@ -8,20 +8,20 @@ public class Main {
         String userJack = "Jack";
         String userRob = "Rob";
         String userJoe = "Joe";
-        LibraryLogic libraryLogic=new LibraryLogic();
-        addAllRequiredBooks(libraryLogic);
-        Book book=libraryLogic.searchBookByTitle("Oliver twist");
-        libraryLogic.loanBook(userDan, book.getTitle());
-        libraryLogic.loanBook(userJack, book.getTitle());
-        libraryLogic.loanBook(userRob, book.getTitle());
-        libraryLogic.loanBook(userJoe, book.getTitle());
-        libraryLogic.returnBook(book.getTitle(),userJack);
+        LibraryService libraryService =new LibraryService();
+        addAllRequiredBooks(libraryService);
+        Book book= libraryService.searchBookByTitle("Oliver twist");
+        libraryService.loanBook(userDan, book.getTitle());
+        libraryService.loanBook(userJack, book.getTitle());
+        libraryService.loanBook(userRob, book.getTitle());
+        libraryService.loanBook(userJoe, book.getTitle());
+        libraryService.returnBook(book.getTitle(),userJack);
     }
-    public static void addAllRequiredBooks(LibraryLogic libraryLogic){
-        libraryLogic.addBook("Moby Dick", "AuthorA");
-        libraryLogic.addBook("Ulysses", "AuthorB");
-        libraryLogic.addBook("Oliver twist", "AuthorC");
-        libraryLogic.addBook("Hamlet", "AuthorD");
-        libraryLogic.addBook("Catch-22", "AuthorE");
+    public static void addAllRequiredBooks(LibraryService libraryService){
+        libraryService.addBook("Moby Dick", "AuthorA");
+        libraryService.addBook("Ulysses", "AuthorB");
+        libraryService.addBook("Oliver twist", "AuthorC");
+        libraryService.addBook("Hamlet", "AuthorD");
+        libraryService.addBook("Catch-22", "AuthorE");
     }
 }

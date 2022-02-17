@@ -4,14 +4,14 @@ import java.util.ArrayDeque;
 import java.util.HashMap;
 import java.util.HashSet;
 
-public class LibraryDB {
+public class Library {
     private final HashSet<Book> books;
     private final HashMap<String, ArrayDeque<String>> bookLoans;
     private final int numCopies;
     // if there is a need to distinguish who returns the loan
     private final HashMap<String,HashSet<String>> bookLoansDist;
     private final HashMap<String,ArrayDeque<String>> bookReservations;
-    public LibraryDB(int numCopies){
+    public Library(int numCopies){
         this.books = new HashSet<>();
         this.bookLoans = new HashMap<>();
         this.numCopies = numCopies;
