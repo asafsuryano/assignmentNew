@@ -42,7 +42,7 @@ public class Library {
         boolean dist = true;
         if (dist) {
             // distinguish
-            if (this.bookLoansDist.get(title).size() >= 2) {
+            if (this.bookLoansDist.get(title).size() >= numCopies) {
                 this.bookReservations.get(title).add(userName);
             } else {
                 this.bookLoansDist.get(title).add(userName);
