@@ -11,17 +11,29 @@ public class Main {
         LibraryService libraryService =new LibraryServiceImplementation();
         addAllRequiredBooks(libraryService);
         Book book= libraryService.searchBookByTitle("Oliver twist");
-        libraryService.loanBook(userDan, book.getTitle());
-        libraryService.loanBook(userJack, book.getTitle());
-        libraryService.loanBook(userRob, book.getTitle());
-        libraryService.loanBook(userJoe, book.getTitle());
-        libraryService.returnBook(book.getTitle(),userJack);
+        if (book != null) {
+            libraryService.loanBook(userDan, book.getTitle());
+            libraryService.loanBook(userJack, book.getTitle());
+            libraryService.loanBook(userRob, book.getTitle());
+            libraryService.loanBook(userJoe, book.getTitle());
+            libraryService.returnBook(book.getTitle(), userJack);
+        }
     }
     public static void addAllRequiredBooks(LibraryService libraryService){
-        libraryService.addBook("Moby Dick", "AuthorA");
-        libraryService.addBook("Ulysses", "AuthorB");
-        libraryService.addBook("Oliver twist", "AuthorC");
-        libraryService.addBook("Hamlet", "AuthorD");
-        libraryService.addBook("Catch-22", "AuthorE");
+        if (!libraryService.addBook("Moby Dick", "AuthorA")) {
+            System.out.println("there was a problem adding Moby Dick");
+        }
+        if (!libraryService.addBook("Ulysses", "AuthorB")) {
+            System.out.println("There was a problem adding Ulysses");
+        }
+        if (!libraryService.addBook("Oliver twist", "AuthorC")) {
+            System.out.println("There was a problem adding Oliver Twist");
+        }
+        if (!libraryService.addBook("Hamlet", "AuthorD")) {
+            System.out.println("There was a problem adding Hamlet");
+        }
+        if (!libraryService.addBook("Catch-22", "AuthorE")) {
+            System.out.println("There was a problem adding Catch-22");
+        }
     }
 }
