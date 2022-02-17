@@ -34,7 +34,7 @@ public class LibraryServiceImplementation implements LibraryService {
         library.removeBookLoan(title,userName);
         if (library.getNumOfLoansForBook(title) >= numCopies) {
             String nextUser= library.getNextUserToLoanTheBook(title);
-            library.addLoanToBook(title,nextUser);
+//            library.addLoanToBook(title,nextUser);
             System.out.println(nextUser + " was the next in the line for the book “" + title + "”. Copy 1 loaned by " + nextUser);
         }
     }
