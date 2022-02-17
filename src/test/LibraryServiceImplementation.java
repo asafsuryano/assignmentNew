@@ -26,7 +26,7 @@ public class LibraryServiceImplementation implements LibraryService {
     public void loanBook (String userName,String title) {
         library.addLoanToBook(title,userName);
         if (library.getNumOfLoansForBook(title) > numCopies) {
-            System.out.println("the book "+ title + " is not available. You have been added to the waiting list. You are “" + (library.getNumOfLoansForBook(title) - numCopies) + "” in the line");
+            System.out.println("the book "+ title + " is not available. You have been added to the waiting list. You are " + (library.getNumOfLoansForBook(title) - numCopies) + " in the line");
         }
 
     }
@@ -34,7 +34,7 @@ public class LibraryServiceImplementation implements LibraryService {
         library.removeBookLoan(title,userName);
         if (library.getNumOfLoansForBook(title) >= numCopies) {
             String nextUser= library.getNextUserToLoanTheBook(title);
-            System.out.println(nextUser + " was the next in the line for the book “" + title + "”. Copy 1 loaned by " + nextUser);
+            System.out.println(nextUser + " was the next in the line for the book " + title + ". Copy 1 loaned by " + nextUser);
         }
     }
 }
